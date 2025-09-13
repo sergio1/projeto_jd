@@ -1,0 +1,226 @@
+Claro! Abaixo estão os **gabaritos (soluções comentadas)** para a lista de exercícios envolvendo **listas e dicionários em Python**:
+
+---
+
+## ✅ GABARITO – Exercícios de Listas e Dicionários em Python
+
+---
+
+### 📘 Parte 1 – **Listas**
+
+#### 1. **Soma de Elementos**
+
+```python
+numeros = [1, 2, 3, 4, 5]
+soma = sum(numeros)
+print("Soma:", soma)
+```
+
+#### 2. **Contar Ocorrências**
+
+```python
+palavras = input("Digite palavras separadas por espaço: ").split()
+ocorrencias = {}
+
+for palavra in palavras:
+    if palavra in ocorrencias:
+        ocorrencias[palavra] += 1
+    else:
+        ocorrencias[palavra] = 1
+
+print(ocorrencias)
+```
+
+#### 3. **Remover Duplicatas**
+
+```python
+numeros = [1, 2, 2, 3, 4, 4, 5]
+sem_duplicatas = list(set(numeros))
+print("Sem duplicatas:", sem_duplicatas)
+```
+
+#### 4. **Maior e Menor Elemento**
+
+```python
+numeros = [10, 5, 8, 20, 2]
+print("Maior:", max(numeros))
+print("Menor:", min(numeros))
+```
+
+#### 5. **Lista Invertida**
+
+```python
+nomes = ["Ana", "Bruno", "Carlos"]
+invertida = list(reversed(nomes))
+print("Invertida:", invertida)
+```
+
+#### 6. **Filtrar Números Pares**
+
+```python
+numeros = [1, 2, 3, 4, 5, 6]
+pares = [n for n in numeros if n % 2 == 0]
+print("Pares:", pares)
+```
+
+#### 7. **Interseção entre listas**
+
+```python
+lista1 = [1, 2, 3, 4]
+lista2 = [3, 4, 5, 6]
+intersecao = list(set(lista1) & set(lista2))
+print("Interseção:", intersecao)
+```
+
+---
+
+### 📘 Parte 2 – **Dicionários**
+
+#### 1. **Cadastro de Alunos**
+
+```python
+alunos = {"João": 7.5, "Maria": 9.0}
+nome = input("Digite o nome do aluno: ")
+print("Nota:", alunos.get(nome, "Aluno não encontrado"))
+```
+
+#### 2. **Contador de Caracteres**
+
+```python
+palavra = input("Digite uma palavra: ")
+contador = {}
+
+for letra in palavra:
+    if letra in contador:
+        contador[letra] += 1
+    else:
+        contador[letra] = 1
+
+print(contador)
+```
+
+#### 3. **Converter Lista para Dicionário**
+
+```python
+chaves = ["nome", "idade"]
+valores = ["Lucas", 25]
+dicionario = dict(zip(chaves, valores))
+print(dicionario)
+```
+
+#### 4. **Contador de Palavras**
+
+```python
+texto = input("Digite um texto: ").lower().split()
+contador = {}
+
+for palavra in texto:
+    if palavra in contador:
+        contador[palavra] += 1
+    else:
+        contador[palavra] = 1
+
+print(contador)
+```
+
+#### 5. **Estoque de Produtos**
+
+```python
+estoque = {"caneta": 10, "caderno": 5}
+produto = input("Digite o produto: ")
+
+if produto in estoque:
+    print(f"Quantidade de {produto}: {estoque[produto]}")
+else:
+    print("Produto não encontrado.")
+```
+
+---
+
+### 📘 Parte 3 – **Listas + Dicionários**
+
+#### 1. **Lista de Dicionários - Agenda Telefônica**
+
+```python
+agenda = [
+    {"nome": "Ana", "telefone": "1234", "email": "ana@email.com"},
+    {"nome": "Bruno", "telefone": "5678", "email": "bruno@email.com"}
+]
+
+busca = input("Digite o nome: ")
+for contato in agenda:
+    if contato["nome"].lower() == busca.lower():
+        print(contato)
+        break
+else:
+    print("Contato não encontrado.")
+```
+
+#### 2. **Boletim Escolar**
+
+```python
+aluno = input("Nome do aluno: ")
+notas = []
+
+for i in range(3):
+    nota = float(input(f"Nota {i+1}: "))
+    notas.append(nota)
+
+boletim = {
+    "nome": aluno,
+    "notas": notas,
+    "média": sum(notas) / len(notas)
+}
+
+print(boletim)
+```
+
+#### 3. **Ranking de Pontuação**
+
+```python
+nomes = ["Ana", "João", "Paulo"]
+pontos = [10, 20, 15]
+ranking = dict(zip(nomes, pontos))
+
+ranking_ordenado = dict(sorted(ranking.items(), key=lambda x: x[1], reverse=True))
+print(ranking_ordenado)
+```
+
+#### 4. **Lista de Compras com Preços**
+
+```python
+compras = {}
+while True:
+    item = input("Produto (ou 'fim'): ")
+    if item.lower() == "fim":
+        break
+    preco = float(input("Preço: "))
+    compras[item] = preco
+
+total = sum(compras.values())
+print("Total da compra:", total)
+```
+
+#### 5. **Dicionário de Dicionários**
+
+```python
+usuarios = {}
+
+while True:
+    usuario = input("Usuário (ou 'sair'): ")
+    if usuario.lower() == "sair":
+        break
+    idade = int(input("Idade: "))
+    cidade = input("Cidade: ")
+
+    usuarios[usuario] = {
+        "idade": idade,
+        "cidade": cidade
+    }
+
+print(usuarios)
+```
+
+---
+
+Se quiser, posso gerar um **PDF organizado com enunciados e soluções**, ou montar como um **notebook Jupyter** para entrega em sala. Deseja isso?
